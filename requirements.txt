@@ -1,7 +1,5 @@
 streamlit-lottie
 plotly
-time
-io
 hydralit-components
 ultralytics
 matplotlib>=3.2.2
