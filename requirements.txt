@@ -1,6 +1,6 @@
-streamlit_lottie 
+streamlit-lottie 
 plotly
 time
 io
-hydralit_components
+hydralit-components
 ultralytics
