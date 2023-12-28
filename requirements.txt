@@ -1,4 +1,4 @@
-streamlit-lottie 
+streamlit-lottie
 plotly
 time
 io
