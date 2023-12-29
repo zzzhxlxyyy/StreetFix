@@ -71,7 +71,8 @@ thop==0.1.1.post2209072238
 toml==0.10.2
 tomli==2.0.1
 toolz==0.12.0
-torch==2.1.2
+-f https://data.pyg.org/whl/torch-2.1.2+cpu.html 
+torch-scatter
 torchvision==0.16.2
 tornado==6.4
 tqdm==4.66.1
