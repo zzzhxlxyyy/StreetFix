@@ -85,6 +85,7 @@ watchdog==3.0.0
 yapf==0.40.2
 zipp==3.17.0
 ninja
+
 -r mmcv/requirements/optional.txt
 mmengine==0.10.2
 -e mmcv/[ops]
