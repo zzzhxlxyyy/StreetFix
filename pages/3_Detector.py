@@ -36,8 +36,8 @@ else:
     if st.button("Detect"):
         with hc.HyLoader('Detecting...',hc.Loaders.pacman):
             time.sleep(5)
-            v7pred, v7time = yolov7_predict.detect(img, weights=r'yolov7\v7weights\best.pt', conf_thres=0.1, nosave=True)
-            v8pred, v8time = yolov8_predict.v8predict(img, r'yolov8\v8weights\best.pt')
+            v7pred, v7time = yolov7_predict.detect(img, weights='yolov7/v7weights/best.pt', conf_thres=0.1, nosave=True)
+            v8pred, v8time = yolov8_predict.v8predict(img, 'yolov8/v8weights/best.pt')
             # t0 = time.time()
             # frcnnpred = frcnn_predict.frcnnpredict(img_np ,r'frcnn\checkpoint\best_coco_bbox_mAP_epoch_20.pth')
             # frcnntime = time.time() - t0
