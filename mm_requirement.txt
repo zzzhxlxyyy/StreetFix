@@ -1,0 +1,4 @@
+-r mmcv/requirements/optional.txt
+mmengine==0.10.2
+-e mmcv/[ops]
+-e mmdetection/
