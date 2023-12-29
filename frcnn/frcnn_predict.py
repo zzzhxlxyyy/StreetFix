@@ -4,7 +4,7 @@
 # # checkpoint_file = 'faster_rcnn_r101_fpn_1x_coco_20200130-f513f705.pth'
 # # model = init_detector(config_file, checkpoint_file, device='cpu')  # or device='cuda:0'
 # # res = inference_detector(model, 'dog.jpeg')
-from mmdet.apis import DetInferencer
+from mmdetection.mmdet.apis import DetInferencer
 def frcnnpredict(img,weight):
     # Initialize the DetInferencer
     inferencer = DetInferencer(model= r'frcnn\model\faster-rcnn_r101_fpn_1x_coco.py', weights=weight)
