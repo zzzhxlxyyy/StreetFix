@@ -4,7 +4,7 @@ import assets.DataPreprocess as DataPreprocess
 import yolov7.yolov7_predict as yolov7_predict
 from io import BytesIO
 import yolov8.yolov8_predict as yolov8_predict
-# import frcnn.frcnn_predict as frcnn_predict
+import frcnn.frcnn_predict as frcnn_predict
 import time
 import numpy as np
 import hydralit_components as hc
@@ -36,22 +36,22 @@ else:
     if st.button("Detect"):
         with hc.HyLoader('Detecting...',hc.Loaders.pacman):
             time.sleep(5)
-            v7pred, v7time = yolov7_predict.detect(img, weights='yolov7/v7weights/best.pt', conf_thres=0.1, nosave=True)
-            v8pred, v8time = yolov8_predict.v8predict(img, 'yolov8/v8weights/best.pt')
-            # t0 = time.time()
-            # frcnnpred = frcnn_predict.frcnnpredict(img_np ,r'frcnn\checkpoint\best_coco_bbox_mAP_epoch_20.pth')
-            # frcnntime = time.time() - t0
+            v7pred, v7time = yolov7_predict.detect(img, weights=r'yolov7\v7weights\best.pt', conf_thres=0.1, nosave=True)
+            v8pred, v8time = yolov8_predict.v8predict(img, r'yolov8\v8weights\best.pt')
+            t0 = time.time()
+            frcnnpred = frcnn_predict.frcnnpredict(img_np ,r'frcnn\checkpoint\best_coco_bbox_mAP_epoch_20.pth')
+            frcnntime = time.time() - t0
             # frcnnpred_rgb = cv2.cvtColor(frcnnpred, cv2.COLOR_BGR2RGB)
         st.success('Done!')
 
         col1, col2, col3 = st.columns(3)
         
-        # with col1:
-        #     st.image(frcnnpred,
-        #             caption='Faster RCNN',
-        #             use_column_width=True
-        #             )
-        #     st.write(f"Time taken : {frcnntime:.3f}s")
+        with col1:
+            st.image(frcnnpred,
+                    caption='Faster RCNN',
+                    use_column_width=True
+                    )
+            st.write(f"Time taken : {frcnntime:.3f}s")
         with col2:
             st.image(v7pred[0], 
                     caption='Yolov7',
