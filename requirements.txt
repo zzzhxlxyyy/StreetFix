@@ -17,4 +17,5 @@ mmengine==0.10.2
 -r mmcv/requirements/optional.txt
 -e mmcv/
 -r mmdetection/requirements.txt
--e mmdetection/
+-e mmdetection
+dill

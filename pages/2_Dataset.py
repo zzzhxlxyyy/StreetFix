@@ -20,20 +20,20 @@ cols = st.columns([0.05, 0.425, 0.05, 0.425, 0.05])
 with cols[1]:
     # card(text="",title="", image="items\D00.png")
     st.markdown("*Longitudinal Crack (D00)*")
-    st.image('assets\D00.png', 
+    st.image('assets/D00.png', 
              use_column_width=True)
     
     st.markdown("*Alligator Crack (D20)*")
-    st.image('assets\D20.png',
+    st.image('assets/D20.png',
             use_column_width=True)
 
 with cols[3]:
     st.markdown("*Transverse Crack (D10)*")
-    st.image('assets\D10.png', 
+    st.image('assets/D10.png', 
             use_column_width=True)
     
     st.markdown("*Pothole (D40)*")
-    st.image('assets\D40.png', 
+    st.image('assets/D40.png', 
             use_column_width=True)    
 
 st.divider()
@@ -42,7 +42,7 @@ st.write("""
     #### Class Distribution 
 """)
 
-df = pd.read_csv(r'assets\class_distribution.csv')
+df = pd.read_csv('assets/class_distribution.csv')
 
 # Plot class distribution using Plotly Express
 fig = px.bar(df, x='Class Labels', y=['Train Counts', 'Validation Counts', 'Test Counts'],
@@ -70,9 +70,9 @@ def plot_bbox_area_distribution(csv_filename, set_name):
 
     st.plotly_chart(fig)
 
-train_area = r'assets\bbox_area_distribution_trainset.csv'
-test_area = r'assets\bbox_area_distribution_testset.csv'
-val_area = r'assets\bbox_area_distribution_valset.csv'
+train_area = 'assets/bbox_area_distribution_trainset.csv'
+test_area = 'assets/bbox_area_distribution_testset.csv'
+val_area = 'assets/bbox_area_distribution_valset.csv'
 
 plot_bbox_area_distribution(train_area, "Train Set")
 plot_bbox_area_distribution(test_area, "Test Set")
